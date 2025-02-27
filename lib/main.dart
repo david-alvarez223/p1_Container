@@ -1,41 +1,46 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text('Nava container'),
+          backgroundColor: Colors.lightGreenAccent,
+        ),
+        body: Center(
+          child: Container(
+            width: 200.0,
+            height: 200.0,
+            decoration: BoxDecoration(
+              color: Colors.lightGreen, // Background color of the container
+              borderRadius: BorderRadius.circular(20.0), // Rounded edges
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.cyan.withOpacity(0.7), // Shadow color
+                  spreadRadius: 5, // Spread radius
+                  blurRadius: 7, // Blur radius
+                  offset: Offset(0, 3), // Shadow position
+                ),
+              ],
+            ),
+            child: Center(
+              child: Text(
+                'Contenedor 1',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0,
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );
